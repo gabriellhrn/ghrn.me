@@ -1,0 +1,4 @@
+baseURL = 'https://ghrn.me/'
+languageCode = 'en-us'
+title = 'ghrn.me'
+theme = 'nostyleplease'
