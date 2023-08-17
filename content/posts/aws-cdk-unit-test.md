@@ -32,18 +32,21 @@ infrastructure is going to look like. When I used [Troposphere](https://github.c
 a Python library that allows you to more easily create CloudFormation templates,
 I had to do some trial and error until I got the right output. Eventually, I learned
 the codebase and got used to it and writing code and debugging got faster, but I
-still felt that programming languages added too much additional complexity and
-the simplicity of Terraform was superior to the power of programming languages.
+still felt that programming languages made it easy to add complexity and that the
+simplicity of Terraform was superior to the power of programming languages.
 I still hold this thinking, but I also know that AWS CDK has its space for some
 use cases and, more importantly, that with unit tests I can mitigate most of
 the issues I had in the past.
 
-Using unit tests I can shorten my feedback loop and make sure that the changes
-I make will match exactly what I want to happen. And I think this is especially
-important for people who are trying to contribute their first changes. Without
-diving into the codebase and learning all the little pieces, they can easily
-test and be confident that the code they wrote doesn't incorrectly change the desired
-output. And because I know I'm no expert in AWS CDK, one of my first contributions
-to this new project I jumped in was to add unit tests.
+With unit tests I can shorten my feedback loop and be sure that the changes
+I make are exactly what I want them to be. And I believe this is especially
+important for people who are trying to contribute their first changes to a new
+project. Without having to dive into the codebase and learn all the little bit and pieces,
+they can easily test and be confident that the code they've written won't inadvertently
+change the desired output. And because I know I'm no expert in AWS CDK, one of
+my first contributions to this new project I've jumped into was to add some unit
+tests.
 
----
+## Testing a basic stack
+
+
