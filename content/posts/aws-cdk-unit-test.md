@@ -1,0 +1,49 @@
+---
+title: "Unit tests for AWS CDK"
+date: 2023-08-06T17:08:24+02:00
+draft: true
+---
+
+---
+
+I recently started using AWS CDK in a project that I'm now contributing to
+at work. It is a new experience for me, this tool. I've turned a blind eye
+to it for some time as a result of bad experiences in the past. Not with AWS CDK
+itself, mind you, but with the concept.
+
+The basic premise of AWS CDK is that you can use the power of a programming
+language to describe your infrastructure.
+
+> **AWS Cloud Development Kit (CDK)**
+>
+> Define your cloud application resources using familiar programming languages
+>
+> — [AWS CDK documentation](https://aws.amazon.com/cdk/)
+
+And that bit about using programming languages to describe infrastructure was enough
+reason for me not to use CDK. That and the use of CloudFormation under the hood. It's
+not that I'm not a fan of infrastructure as code. Not at all! I'm all in for it.
+But for that, my preference has been Terraform.
+
+My main issue with using programming languages to describe infrastructure is
+complexity. Using a programming language makes it easy to create too many
+abstractions, which leads to making it very hard to predict what the resulting
+infrastructure is going to look like. When I used [Troposphere](https://github.com/cloudtools/troposphere),
+a Python library that allows you to more easily create CloudFormation templates,
+I had to do some trial and error until I got the right output. Eventually, I learned
+the codebase and got used to it and writing code and debugging got faster, but I
+still felt that programming languages added too much additional complexity and
+the simplicity of Terraform was superior to the power of programming languages.
+I still hold this thinking, but I also know that AWS CDK has its space for some
+use cases and, more importantly, that with unit tests I can mitigate most of
+the issues I had in the past.
+
+Using unit tests I can shorten my feedback loop and make sure that the changes
+I make will match exactly what I want to happen. And I think this is especially
+important for people who are trying to contribute their first changes. Without
+diving into the codebase and learning all the little pieces, they can easily
+test and be confident that the code they wrote doesn't incorrectly change the desired
+output. And because I know I'm no expert in AWS CDK, one of my first contributions
+to this new project I jumped in was to add unit tests.
+
+---
