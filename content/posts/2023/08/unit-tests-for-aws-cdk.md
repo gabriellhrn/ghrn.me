@@ -1,6 +1,9 @@
 ---
 title: "Unit tests for AWS CDK"
 date: 2023-08-20T16:13:00+02:00
+draft: false
+categories: ['tech']
+tags: ['aws', 'cdk', 'testing', 'go', 'terraform', 'cloud']
 ---
 
 ---
