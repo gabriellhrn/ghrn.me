@@ -102,11 +102,10 @@ func TestAppStack(t *testing.T) {
 ```
 
 Note that we're only testing the function `NewAppStack()`. If we had other
-functions, we should test them as well. You will also notice that we're using a
-package called [`jsii`](https://github.com/aws/jsii). Without going into much
+functions, we should test them as well. You will also notice that we're using [a
+package called `jsii`](https://github.com/aws/jsii). Without going into much
 details, AWS CDK is written in JavaScript and `jsii` is the technology that
-enables other languages to use this JavaScript code, by enabling them to
-naturally interact with JavaScript.
+enables other languages to naturally interact with this JavaScript code.
 
 Running this test will return an error if our resources have not been defined in
 code yet:
