@@ -1,7 +1,8 @@
 baseURL = 'https://ghrn.me/'
 languageCode = 'en-us'
-title = 'ghrn.me'
+title = 'Gabriell Nascimento'
 theme = 'nostyleplease'
 
 [params]
 favicon = 'favicon.ico'
+custom_css = ["css/custom.css"]
