@@ -19,6 +19,10 @@ title = "browse by"
   url = "tags"
 
 [[entries]]
+title = "about"
+url = "about"
+
+[[entries]]
   title = """
   <span style="display:inline-block; width: 25px;">
   <a href='https://github.com/gabriellhrn'>

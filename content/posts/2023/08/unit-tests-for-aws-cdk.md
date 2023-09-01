@@ -1,7 +1,7 @@
 ---
 title: "Unit tests for AWS CDK"
 date: 2023-08-20T16:13:00+02:00
-lastmod: 2023-08-21T14:02:00+02:00
+lastmod: 2023-09-01T14:02:00+02:00
 draft: false
 categories: ['tech']
 tags: ['aws', 'cdk', 'testing', 'go', 'terraform', 'cloud']
@@ -46,7 +46,7 @@ issues I had in the past.
 With unit tests I can shorten my feedback loop and be sure that the changes I
 make are exactly what I want them to be. And I believe this is especially
 important for people who are trying to contribute their first changes to a new
-project. Without having to dive into the codebase and learn all the little bit
+project. Without having to dive into the codebase and learn all the little bits
 and pieces, they can easily test and be confident that the code they've written
 won't inadvertently change the desired output. And because I know I'm no expert
 in AWS CDK, one of my first contributions to this new project I've jumped into
@@ -67,7 +67,7 @@ how CDK works internally. The framework allows you to write code using a
 programming language, like Go, and when you deploy, it transforms the Go code
 into CloudFormation templates and provisions the infrastructure defined in the
 templates using CloudFormation. We don't need to test the provisioning part —
-that's AWS's job. As for us, our job is to ensure is that our CloudFormation templates
+that's AWS's job. As for us, our job is to ensure that our CloudFormation templates
 are valid and have the resources and properties they're supposed to have.
 Accordingly, asserting the templates generated from our code guarantees the
 correctness of any changes we might have made to the code. Let's jump into the
@@ -223,7 +223,7 @@ func NewAppStack(scope constructs.Construct, id string, props *AppStackProps) aw
 And now, if we run the tests again, we'll see...
 
 ```golang
- aws-cdk-example git:(7b19960) ✗ ➜  make test
+$ make test
 === RUN   TestAppStack
 --- FAIL: TestAppStack (4.06s)
 panic: Error: Template has 1 resources with type AWS::SNS::Subscription, but none match as expected.
