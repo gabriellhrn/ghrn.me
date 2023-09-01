@@ -6,3 +6,6 @@ theme = 'nostyleplease'
 [params]
 favicon = 'favicon.ico'
 custom_css = ["css/custom.css"]
+
+  [params.theme_config]
+  appearance = "light"
