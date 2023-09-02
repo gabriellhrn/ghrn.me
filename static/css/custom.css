@@ -14,12 +14,12 @@ hr.title {
   border-bottom: 1px;
   border-bottom-style: solid;
   border-bottom-color: #ff5f01;
+}
 
-  &:before {
+hr.title:before {
     content: ''
-  }
+}
 
-  &:after {
-    content: '';
-  }
+hr.title:after {
+    content: ''
 }
