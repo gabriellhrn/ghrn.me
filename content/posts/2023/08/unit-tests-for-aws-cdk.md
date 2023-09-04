@@ -1,7 +1,7 @@
 ---
 title: "Unit tests for AWS CDK"
 date: 2023-08-20T16:13:00+02:00
-lastmod: 2023-09-01T14:02:00+02:00
+lastmod: 2023-09-04T13:41:00+02:00
 draft: false
 categories: ['tech']
 tags: ['aws', 'cdk', 'testing', 'go', 'terraform', 'cloud']
@@ -330,7 +330,7 @@ can't change the resources I already have. And that's exactly how I can use my
 unit tests to make my code changes predictable.
 
 This time, I'm going to focus first on the new queue and later on the bucket. We
-start similar to next time, by update the queue count to 2. But we want two
+start similarly to next time, by updating the queue count to 2. But we want two
 different queues, one standard and the other a FIFO queue. In that case, we also
 need to update our test to make sure we have both types of queues:
 
