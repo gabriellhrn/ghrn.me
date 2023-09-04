@@ -26,6 +26,7 @@ from doing what I wanted to do: write. Things like "I need a good domain",
 I'm forcing myself to think that they aren't blockers. Anything I do for the first
 time is not going to be the best version of itself, so I might as well improve it as I go.
 
+<!-- vale off -->
 But I also kept thinking things like "What would I write about?" or "Why does anyone need
 yet another blog?". The internet already has plenty of content for whatever you
 want to read about. A new blog is just another drop in the ocean. It's meaningless
@@ -36,6 +37,7 @@ organize my ideas better when I write and I research what I want to write
 about; I write a lot at work and getting better at it can help me be more
 efficient and writing also improves my communication skills; I want to remember
 what I did in the past and see how much I've grown.
+<!-- vale on ->
 
 So I think I'm good. I have where to write and where to publish. And I have my
 reason for writing. Now I have to make a habit of it and, let's hope, in the future

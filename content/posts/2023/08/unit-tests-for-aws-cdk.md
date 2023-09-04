@@ -29,6 +29,7 @@ enough reason for me not to use CDK. That and the use of
 under the hood. It's not that I'm not a fan of infrastructure as code. Not at
 all! I'm all in for it. But for that, my preference has been Terraform.
 
+<!-- vale off -->
 My main issue with using programming languages to describe infrastructure is
 complexity. Using a programming language makes it easy to create too many
 abstractions, which leads to making it very hard to predict what the resulting
@@ -42,6 +43,7 @@ simplicity of Terraform was superior to the power of programming languages. I
 still hold this thinking, but I also know that AWS CDK has its place for some
 use cases and, more importantly, that with unit tests I can mitigate most of the
 issues I had in the past.
+<!-- vale on -->
 
 With unit tests I can shorten my feedback loop and be sure that the changes I
 make are exactly what I want them to be. And I believe this is especially
@@ -155,10 +157,12 @@ PASS
 ok      app     4.224s
 ```
 
+<!-- vale off -->
 But this stack is not complete yet. I also want to subscribe the SQS Queue to
 the SNS Topic. The subscription in CloudFormation is a separate resource with a
-referrence to the queue, so we need to add a new `ResourceCountIs()` assertion
+reference to the queue, so we need to add a new `ResourceCountIs()` assertion
 for the new resource:
+<!-- vale on -->
 
 ```golang
 	template.ResourceCountIs(jsii.String("AWS::SNS::Subscription"), jsii.Number(1))
@@ -185,7 +189,7 @@ asserting [resource properties](https://pkg.go.dev/github.com/aws/aws-cdk-go/aws
 ```
 
 We use `NewCapture()` and the matcher API (`Match_ObjectLike`) to capture a
-value from the template. In this case, we want to capture the referrence to the
+value from the template. In this case, we want to capture the reference to the
 queue. In essence, the
 [ARN](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) of
 the queue that will be used as the value for the parameter `Endpoint` of the
@@ -220,7 +224,7 @@ func NewAppStack(scope constructs.Construct, id string, props *AppStackProps) aw
 }
 ```
 
-And now, if we run the tests again, we'll see...
+And now, if we run the tests again, we'll see…
 
 ```golang
 $ make test
@@ -249,6 +253,7 @@ FAIL
 make: *** [Makefile:9: test] Error 1
 ```
 
+<!-- vale off -->
 That they fail!? Yes, they fail because we were expecting a queue with the
 resource name `AppQueueXXXXXXXX`, but we only have one with the name
 `AppQueueFD3F4958`. This name is not actually the name of the resource. This is
@@ -260,6 +265,7 @@ when we create a stack or a resource). Since this hash is based on the values ju
 mentioned, it's safe to add it to the test: there's more chances that we're
 going to modify the properties of this resource rather than its name; and if we
 change its name, we should reflect it in the test as well.
+<!-- vale on -->
 
 After updating the capture, our test now looks like this:
 
@@ -563,7 +569,7 @@ func createFifoQueue(stack awscdk.Stack, id string, props *awssqs.QueueProps) aw
 }
 ```
 
-And if I were to run the tests again, we would see as a result...
+And if I were to run the tests again, we would see as a result…
 
 ```bash
 $ make test
