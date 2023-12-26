@@ -1,7 +1,6 @@
 ---
 title: "Year in Review: 2023"
-date: 2023-12-21T16:02:58-03:00
-draft: true
+date: 2023-12-26T10:45:00-03:00
 categories: ["year in review"]
 tags: ["aws", "blogging", "career", "cloudflare", "coffee", "hiking", "hobbies", "meetup", "talks", "travelling", "writing"]
 ---
