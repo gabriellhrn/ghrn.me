@@ -130,16 +130,18 @@ building an internal developer platform or if you're managing teams responsible 
 it. It doesn't hurt to say that you can learn from this presentation, but take it with a
 grain of salt: what works for Nintendo may not work for you.
 
+<!-- vale proselint.Skunked = NO -->
 I haven't mentioned the keynotes in detail, but they were also really good and
 well worth a watch, especially Werner Vogels' talk. To conclude, although I felt sort of
 overwhelmed by the conference, the overall experience was positive and I'm
 looking forward to going back to it, hopefully in a better health this time.
+<!-- vale proselint.Skunked = YES -->
 
 ## The non-work related stuff
 
 Moving on from work related topics to more personal things, two hobbies I have
 are fitness and travelling. The year of 2023 was a year
-of hiking trips for me. In August, I travelled to Bergen, Norway, a beautiful city
+of hiking trips for me. In August I travelled to Bergen, a beautiful city
 surrounded by mountains and fjords. The view from the top of the mountains was
 amazing. The climb was also fun. I didn't choose the right shoes for the hike
 and I ended up with some nasty blisters. But you wanna know the truth? It was
