@@ -15,4 +15,4 @@ this blog.
 
 You can find me on [GitHub](https://github.com/gabriellhrn) or
 [Mastodon](https://hachyderm.io/@gabriell). I also have
-[email](mailto:gabriellhrn@gmail.com).
+[email](mailto:hello@ghrn.me).
