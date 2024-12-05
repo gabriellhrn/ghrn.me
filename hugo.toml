@@ -5,6 +5,8 @@ theme = 'nostyleplease'
 
 [params]
 favicon = 'favicon.ico'
+favicon16x16 = 'favicon-16x16.png'
+favicon32x32 = 'favicon-32x32.png'
 custom_css = ["css/custom.css"]
 
   [params.theme_config]
