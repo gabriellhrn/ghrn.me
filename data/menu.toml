@@ -3,6 +3,8 @@ title = "all posts"
 
   [entries.post_list]
   limit = 5
+  url = "/posts/"
+  section = "posts"
   show_more = true
   show_more_text = "See archive..."
   show_more_url = "posts"
@@ -17,6 +19,10 @@ title = "browse by"
   [[entries.entries]]
   title = "tags"
   url = "tags"
+
+[[entries]]
+title = "knowledge base"
+url = "kb"
 
 [[entries]]
 title = "about"
