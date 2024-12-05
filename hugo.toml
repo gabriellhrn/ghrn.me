@@ -9,3 +9,7 @@ custom_css = ["css/custom.css"]
 
   [params.theme_config]
   appearance = "light"
+
+[permalinks]
+  posts = "/posts/:slug/"
+  kb = "/kb/:slug/"
