@@ -175,8 +175,10 @@ the Origami is really pretty?
 ## Looking ahead
 
 With so much going on in our daily lives, it's easy to forget what's happened
+<!-- vale Vale.Repetition = NO -->
 over the year. Now, I'm not one to dwell on the past. What happened
 happened and there's no point in thinking about how it could have been
+<!-- vale Vale.Repetition = YES -->
 different. But by reflecting we can learn what we can do better or what gives us
 energy. This year I wanted to read more books, I wanted to finish some courses,
 I wanted to finish some projects that were important to me at work. But I couldn't, for one
