@@ -9,9 +9,23 @@ favicon16x16 = 'favicon-16x16.png'
 favicon32x32 = 'favicon-32x32.png'
 custom_css = ["css/custom.css"]
 
+  [params.author]
+  email = 'hello@ghrn.me'
+  name = 'Gabriell Nascimento'
+
   [params.theme_config]
-  appearance = "light"
+  appearance = 'light'
+
+  [params.section]
+    [params.section.kb]
+    rss = false
 
 [permalinks]
-  posts = "/posts/:slug/"
-  kb = "/kb/:slug/"
+  posts = '/posts/:slug/'
+  kb = '/kb/:slug/'
+
+[outputs]
+home = ['html', 'rss']
+section = ['html', 'rss']
+taxonomy = ['html']
+term = ['html']
