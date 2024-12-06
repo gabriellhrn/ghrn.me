@@ -1,3 +1,11 @@
+---
+outputs:
+- html
+cascade:
+  outputs:
+  - html
+---
+
 # About
 
 Hey there, I'm Gabriell.
