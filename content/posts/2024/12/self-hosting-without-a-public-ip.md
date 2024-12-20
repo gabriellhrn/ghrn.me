@@ -10,14 +10,14 @@ learn more about Kubernetes. I ended up using this cluster as a home lab. I
 would use it to test some software I wrote, to try out tools or services that
 could be deployed on Kubernetes, and I used it to control my home network too.
 I deployed PiHole to this cluster and configured my router to use PiHole as the
-DNS server. It worked pretty well for a while until the Pi became very noisy
+DNS server. It worked pretty well for a while until the Pi became noisy
 because their fans started to fail.
 
-But while that setup was up and running, I wanted a way to access the services
+While that setup was up and running, I wanted to be able to access the services
 running on the cluster even when I wasn't home. The problem is that I don't own
-a public IP and I didn't want to buy one, not only because I'd have to pay for,
-but mainly because I didn't actually want to expose services that were probably
-not very safe to the public Internet. I wanted something simple and safe.
+a public IP and I didn't want to buy one, not only because I'd have to pay for it,
+but mainly because I actually didn't want to expose services that were probably
+not safe to the public Internet.
 
 I looked into a couple of options, but ended up going with Cloudflare. I was
 already using Cloudflare's free plan to manage my DNS and I found out I could
@@ -38,7 +38,7 @@ already have a domain managed by Cloudflare. If you don't, you can create a
 Cloudflare account and add your domain. You can use Cloudflare Tunnel, Access
 and DNS with the free plan.
 
-This setup works by deploying a lighweight daemon called `cloudflared` to your
+This setup works by deploying a lightweight daemon called `cloudflared` to your
 private network, in this case to a local Kubernetes cluster. This daemon can
 connect to resources in the private network, such as HTTP servers, and will
 establish an outbound-only connection to Cloudflare's global network, making it
@@ -71,7 +71,7 @@ running:
 $ cloudflared tunnel info
 ```
 
-We can also use this command to check if the tunnel has been created succesfully.
+We can also use this command to check if the tunnel has been created successfully.
 
 Alright, now that we have a tunnel, we need to deploy `cloudflared` and some
 sample services to Kubernetes, then we can connect `cloudflared` to the tunnel
@@ -312,7 +312,9 @@ data:
     - service: http_status:404
 ```
 
+<!-- vale Vale.Spelling = NO -->
 If you look at the config file, you'll notice two hostnames in the ingress part:
+<!-- vale Vale.Spelling = YES -->
 
 ```yaml
 ...
