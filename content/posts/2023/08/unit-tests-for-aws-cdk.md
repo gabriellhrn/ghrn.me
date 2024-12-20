@@ -4,7 +4,7 @@ date: 2023-08-20T16:13:00+02:00
 lastmod: 2023-09-04T13:41:00+02:00
 draft: false
 categories: ['tech']
-tags: ['aws', 'cdk', 'testing', 'go', 'terraform', 'cloud']
+tags: ['aws', 'cdk', 'testing', 'go', 'terraform', 'cloud', 'tutorial']
 ---
 
 ---
