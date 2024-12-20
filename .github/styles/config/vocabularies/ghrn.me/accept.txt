@@ -17,3 +17,11 @@ Kalita
 Vogels
 Pirna
 Okta
+cloudflared
+nginx
+minikube
+microk8s
+hostnames
+postgres
+Postgres
+jumphost
