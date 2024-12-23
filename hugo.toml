@@ -21,7 +21,6 @@ custom_css = ["css/custom.css"]
     rss = false
 
 [permalinks]
-  posts = '/posts/:slug/'
   kb = '/kb/:slug/'
 
 [outputs]
