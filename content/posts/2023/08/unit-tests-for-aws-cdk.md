@@ -7,8 +7,6 @@ categories: ['tech']
 tags: ['aws', 'cdk', 'testing', 'go', 'terraform', 'cloud', 'tutorial']
 ---
 
----
-
 I recently started using AWS CDK in a project that I'm now contributing to at
 work. It is a new experience for me, this tool. I've turned a blind eye to it
 for some time as a result of bad experiences in the past. Not with AWS CDK
@@ -90,7 +88,7 @@ CloudFormation.
 Our first assertion then checks that exactly one of each resource is present in
 the template:
 
-```golang
+```go
 func TestAppStack(t *testing.T) {
 	app := awscdk.NewApp(nil)
 	id := "test"
@@ -127,7 +125,7 @@ To make this test pass, we need to [create one of each
 resource](https://github.com/gabriellhrn/aws-cdk-example/blob/v0.1.0/app/app.go)
 the test wants:
 
-```golang
+```go
 func NewAppStack(scope constructs.Construct, id string, props *AppStackProps) awscdk.Stack {
 	var sprops awscdk.StackProps
 	if props != nil {
@@ -164,7 +162,7 @@ reference to the queue, so we need to add a new `ResourceCountIs()` assertion
 for the new resource:
 <!-- vale on -->
 
-```golang
+```go
 	template.ResourceCountIs(jsii.String("AWS::SNS::Subscription"), jsii.Number(1))
 ```
 
@@ -172,7 +170,7 @@ We also want to make sure that the queue is subscribed to the topic. For that we
 use two new functionalities provided by the `assertions` package, [capture](https://pkg.go.dev/github.com/aws/aws-cdk-go/awscdk/v2/assertions#readme-capturing-values) and
 asserting [resource properties](https://pkg.go.dev/github.com/aws/aws-cdk-go/awscdk/v2/assertions#readme-resource-matching-retrieval):
 
-```golang
+```go
 	subscriptionCapture := assertions.NewCapture(assertions.Match_ObjectLike(
 		&map[string]interface{}{
 			"Fn::GetAtt": []string{
@@ -200,7 +198,7 @@ endpoint.
 The test will fail again because we haven't created the subscription, so we
 update the code to reflect what we want in the stack:
 
-```golang
+```go
 func NewAppStack(scope constructs.Construct, id string, props *AppStackProps) awscdk.Stack {
 	var sprops awscdk.StackProps
 	if props != nil {
@@ -226,7 +224,7 @@ func NewAppStack(scope constructs.Construct, id string, props *AppStackProps) aw
 
 And now, if we run the tests again, we'll see…
 
-```golang
+```bash
 $ make test
 === RUN   TestAppStack
 --- FAIL: TestAppStack (4.06s)
@@ -269,7 +267,7 @@ change its name, we should reflect it in the test as well.
 
 After updating the capture, our test now looks like this:
 
-```golang
+```go
 func TestAppStack(t *testing.T) {
 	app := awscdk.NewApp(nil)
 	id := "test"
@@ -334,7 +332,7 @@ start similarly to next time, by updating the queue count to 2. But we want two
 different queues, one standard and the other a FIFO queue. In that case, we also
 need to update our test to make sure we have both types of queues:
 
-```golang
+```go
 	template.ResourceCountIs(jsii.String("AWS::SQS::Queue"), jsii.Number(2))
 
     template.HasResourceProperties(jsii.String("AWS::SQS::Queue"), map[string]interface{}{
@@ -356,7 +354,7 @@ the CloudFormation template at all.
 Now we can refactor our code slightly, to simplify queue creation and allow us
 to create FIFO queues:
 
-```golang
+```go
 func NewAppStack(scope constructs.Construct, id string, props *AppStackProps) awscdk.Stack {
 	var sprops awscdk.StackProps
 	if props != nil {
@@ -396,7 +394,7 @@ contains the property `WebsiteConfiguration` correctly configured. We'll also
 make sure that the existing bucket won't have its properties changed or, in
 other words, will have the property `WebsiteConfiguration` absent:
 
-```golang
+```go
 	template.ResourceCountIs(jsii.String("AWS::S3::Bucket"), jsii.Number(2))
 
 	template.HasResourceProperties(jsii.String("AWS::S3::Bucket"), map[string]interface{}{
@@ -413,7 +411,7 @@ other words, will have the property `WebsiteConfiguration` absent:
 Similarly to what we did for the queues, we'll refactor the code a bit to
 simplify the creation of standard buckets and buckets for static hosting:
 
-```golang
+```go
 func NewAppStack(scope constructs.Construct, id string, props *AppStackProps) awscdk.Stack {
 	var sprops awscdk.StackProps
 	if props != nil {
@@ -450,7 +448,7 @@ has the assertion.
 
 The full test after all the changes look like this now:
 
-```golang
+```go
 func TestAppStack(t *testing.T) {
 	app := awscdk.NewApp(nil)
 	id := "test"
@@ -513,7 +511,7 @@ func TestAppStack(t *testing.T) {
 
 And this is the code after the refactoring and the inclusion of new resources:
 
-```golang
+```go
 func NewAppStack(scope constructs.Construct, id string, props *AppStackProps) awscdk.Stack {
 	var sprops awscdk.StackProps
 	if props != nil {

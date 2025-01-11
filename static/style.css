@@ -1,0 +1,10 @@
+:root {
+  /* COLOR VARIABLES */
+  --accent: #00BFAE;
+  /* --accent: #40B5B5; */
+  --background: #F7F7F7;
+  --accent-contrast-color: #1E1E1E;
+  --color: #555555;
+  --border-color: rgba(255, 255, 255, .1);
+  --article-link-color: var(inherit);
+}

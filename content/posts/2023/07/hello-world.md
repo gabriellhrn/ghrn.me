@@ -6,8 +6,6 @@ categories: ['thoughts']
 tags: ['hello world']
 ---
 
-***
-
 I had a teacher tell me once, back when I was in technical school, that my first
 program, when learning a new programming language, should always be a
 "Hello, World!". She told me that otherwise I would be cursed and would never
