@@ -1,9 +1,11 @@
 baseURL = 'https://ghrn.me/'
 languageCode = 'en-us'
 title = 'Gabriell Nascimento'
-theme = 'nostyleplease'
+theme = 'ghrn'
 
 [params]
+centerTheme = true
+
 favicon = 'favicon.ico'
 favicon16x16 = 'favicon-16x16.png'
 favicon32x32 = 'favicon-32x32.png'
@@ -28,3 +30,41 @@ home = ['html', 'rss']
 section = ['html', 'rss']
 taxonomy = ['html']
 term = ['html']
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    title = "Gabriell Nascimento"
+
+    [languages.en.params]
+      # subtitle = "A simple, retro theme for Hugo"
+      owner = "gabriell"
+      # keywords = ""
+      # copyright = ""
+      menuMore = "Show more"
+      readMore = "Read more"
+      readOtherPosts = "Read other posts"
+      newerPosts = "Newer posts"
+      olderPosts = "Older posts"
+      missingContentMessage = "Page not found..."
+      missingBackButtonLabel = "Back to home page"
+      minuteReadingTime = "min read"
+      words = "words"
+
+      [languages.en.params.logo]
+        logoText = "gabriell@blog:~$"
+        logoHomeLink = "/"
+
+      [languages.en.menu]
+        [[languages.en.menu.main]]
+          identifier = "about"
+          name = "About"
+          url = "/about"
+        [[languages.en.menu.main]]
+          identifier = "categories"
+          name = "Categories"
+          url = "/categories"
+        [[languages.en.menu.main]]
+          identifier = "kb"
+          name = "Knowledge base"
+          url = "/kb"

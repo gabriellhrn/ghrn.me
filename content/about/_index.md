@@ -24,3 +24,7 @@ this blog.
 You can find me on [GitHub](https://github.com/gabriellhrn) or
 [Mastodon](https://hachyderm.io/@gabriell). I also have
 [email](mailto:hello@ghrn.me).
+
+***
+
+The blog theme is made by me based on [re-terminal](https://themes.gohugo.io/themes/hugo-theme-re-terminal/).

@@ -1,0 +1,57 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @media print {
+    display: none;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    display: flex;
+    flex: 1;
+
+    &:after {
+      content: '';
+      // background: repeating-linear-gradient(90deg, var(--accent), var(--accent) 2px, transparent 0, transparent 10px);
+      display: block;
+      width: 100%;
+      right: 10px;
+    }
+
+    a {
+      flex: 0 0 auto;
+      max-width: 100%;
+      text-decoration: none;
+    }
+  }
+
+  .blinking-rectangle {
+    width: 25px;
+    height: 5px;
+    background-color: var(--accent);
+    animation: blink 1s step-start infinite;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    margin-top: auto;
+    margin-left: 5px;
+  }
+
+  @keyframes blink {
+    0%, 100% {
+        opacity: 1; /* Fully visible */
+    }
+    50% {
+        opacity: 0; /* Fully transparent */
+    }
+  }
+}
